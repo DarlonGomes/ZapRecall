@@ -1,0 +1,79 @@
+header{
+    width: 375px;
+    height: 60px;
+    margin: 42px 0px 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+header h1{
+    width: 204px;
+    text-align: center;
+    font-family: 'Righteous';
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
+header img{
+    width: 52px;
+    height: 60px;
+}
+
+main{
+    width: 375px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+main .topico{
+    width: 300px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+main .topico h4{
+    font-family: 'Recursive';
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+}
+
+main .topico ion-icon{
+    font-size: 23px;
+}
+
+footer{
+    width: 375px;
+    height: 70px;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+footer p{
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
+}
