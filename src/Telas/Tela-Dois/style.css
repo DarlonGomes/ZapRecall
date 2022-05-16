@@ -58,8 +58,9 @@ main .topico ion-icon{
 }
 
 
-main :nth-child(8){
-    margin-bottom: 95px;
+main .espaçador{
+    width: 375px;
+    height: 75px;
 }
 /* PArte um */
 
@@ -75,6 +76,13 @@ main .questao{
     background-color: #FFFFD5;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     margin-bottom: 15px;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.costas{
+    transition: all .5s;
+    transform: rotateY(360deg)
 }
 
 main .questao h4{
@@ -133,14 +141,16 @@ main .questao .secao-botoes .p{
 }
 footer{
     width: 375px;
-    height: 70px;
+    min-height: 70px;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
     bottom: 0;
+    margin-top: 15px;
 }
 
 footer p{
@@ -148,6 +158,41 @@ footer p{
     font-weight: 400;
     font-size: 18px;
     color: #333333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+footer .icones{
+    display: flex;
+    justify-content: center;
+    margin:6px;
+}
+
+footer .icones ion-icon {
+    font-size: 23px;
+    margin-right: 6px;
+}
+
+footer .icones,
+ion-icon[name="close-circle"]{
+    color: #FF3030;
+}
+footer .icones,
+ion-icon[name="help-circle"]{
+    color: #ff922e;
+}
+footer .icones,
+ion-icon[name="check-circle"]{
+    color: #2FBE34;
+}
+
+footer h4{
+    font-family: 'Recursive';
+    font-weight: 700;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+    margin: 15px 0 15px;
 }
 
 .respondido{
