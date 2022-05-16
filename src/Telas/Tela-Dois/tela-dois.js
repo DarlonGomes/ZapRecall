@@ -2,6 +2,10 @@ import React from "react";
 import Botoes from "./botoes";
 import "./style.css"
 export default function TelaDois (){
+    function comparador() { 
+        return Math.random() - 0.5; 
+    }
+
     const perguntas = [
         {topico: "Pergunta",
          pergunta: "Q: O que é JSX?",
@@ -36,6 +40,10 @@ export default function TelaDois (){
          resposta: "R: dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         },
     ]
+
+    perguntas.sort(comparador);
+    let contador = 0;
+
     return(
         <>
         <header>
@@ -43,32 +51,55 @@ export default function TelaDois (){
             <h1>ZapRecall</h1>
         </header>
         <main>
-            {perguntas.map((item, index)=> <Cartas key={index} index={index + 1} topico={item.topico} pergunta={item.pergunta} resposta={item.resposta}/>)}
+            {perguntas.map((item, index)=> <Cartas key={index} index={index + 1} topico={item.topico} pergunta={item.pergunta} resposta={item.resposta} contador={contador}/>)}
         </main>
         <footer>
-            <p>0/3 CONCLUÍDOS</p>
+            <p>{contador}/{perguntas.length} CONCLUÍDOS</p>
         </footer>
         </>
     )
 }
 
 function Cartas (props){
-    const {topico, pergunta, resposta, index} = props;
+    const {topico, pergunta, resposta, index, contador} = props;
     const [flashTexto, setFlashTexto] = React.useState(`Pergunta ${index}`);
     const [flashClasse, setFlashClasse] = React.useState(`topico`);
     const [flashBotao, setFlashBotao] = React.useState(`play`)
-    const [flashBotaoClasse, setFlashBotaoClasse] = React.useState(`inicial`)
     const [flashResposta, setFlashResposta] = React.useState(``)
-    function flashClick (){
+    const [flashContador, setFlashContador] = React.useState(`0`)
+    function flashClick (indicador){
         if(flashBotao === `play`){
             setFlashTexto(pergunta);
             setFlashClasse(`questao`);
             setFlashBotao(`viraCarta`);
+            console.log(contador)
         }
         if(flashBotao === `viraCarta`){
             setFlashTexto(resposta);
             setFlashBotao(`opcoes`)
         }
+        if(flashBotao === `opcoes` && indicador === `errado`){
+            setFlashTexto(`Pergunta ${index}`);
+            setFlashClasse(`topico respondido errado`);
+            setFlashResposta (`errado`)
+            setFlashBotao(`played`)
+            
+        }
+        if(flashBotao === `opcoes` && indicador === `quase`){
+            setFlashTexto(`Pergunta ${index}`);
+            setFlashClasse(`topico respondido quase`);
+            setFlashResposta (`quase`)
+            setFlashBotao(`played`)
+            
+        }
+        if(flashBotao === `opcoes` && indicador === `certo`){
+            setFlashTexto(`Pergunta ${index}`);
+            setFlashClasse(`topico respondido certo`);
+            setFlashResposta (`certo`)
+            setFlashBotao(`played`)
+            
+        }
+
     }
     return (
     <>

@@ -6,10 +6,17 @@ export default function Botoes ({flashBotao, flashResposta, flashClick}){
         </>
         )   
     }
+    if(flashBotao === `played`){
+        return (
+        <>
+        <ion-icon name="play-outline"></ion-icon>
+        </>
+        )   
+    }
     if(flashBotao === `viraCarta`){
         return(
             <>
-            <div class="secao-pergunta">
+            <div className="secao-pergunta">
             <img onClick={flashClick} src="./assets/setinha.png" />
             </div>
             </>
@@ -19,9 +26,9 @@ export default function Botoes ({flashBotao, flashResposta, flashClick}){
         return(
             <>
             <div class="secao-botoes">
-            <button className="backErrado"><p>Não lembrei</p> </button>
-            <button className="backQuase"><p> Quase não lembrei</p> </button>
-            <button className="backZap"><p>Zap!</p> </button>
+            <button onClick={() => flashClick("errado")} className="backErrado"><p>Não lembrei</p> </button>
+            <button onClick={() => flashClick("quase")} className="backQuase"><p> Quase não lembrei</p> </button>
+            <button onClick={() => flashClick("certo")} className="backZap"><p>Zap!</p> </button>
             </div>
             </>
         )
