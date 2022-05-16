@@ -5,9 +5,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 header h1{
@@ -26,11 +23,11 @@ header img{
 
 main{
     width: 375px;
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
    
 }
 main .topico{
@@ -47,15 +44,59 @@ main .topico{
     margin-bottom: 25px;
 }
 
-main .topico h4{
+
+h4 {
     font-family: 'Recursive';
     font-weight: 700;
     font-size: 16px;
     color: #333333;
 }
 
+
 main .topico ion-icon{
     font-size: 23px;
+}
+
+
+main :nth-child(8){
+    margin-bottom: 95px;
+}
+/* PArte um */
+
+main .questao{
+    width: 300px;
+    height: 131px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+
+main .questao h4{
+    font-weight: 400;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+main .questao .secao-inferior{
+    width: 270px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+main .questao img{
+    width: 30px;
+    height: 20px;
+}
+
+main .questao img :hover{
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 footer{
@@ -66,9 +107,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    right: 0;
 }
 
 footer p{
@@ -77,3 +117,18 @@ footer p{
     font-size: 18px;
     color: #333333;
 }
+
+.respondido{
+    text-decoration: line-through;
+}
+.certo{
+    color: #2FBE34;
+}
+.quase{
+    color: #FF922E;
+}
+.errado {
+    color: #FF3030;
+
+}
+

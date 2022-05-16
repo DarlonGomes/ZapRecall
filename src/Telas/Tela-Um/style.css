@@ -1,6 +1,6 @@
 body {
     width: 375px;
-    height: 667px;
+    min-height: 667px;
     background-color: #FB6B6B;
     display: flex;
     justify-content: center;
