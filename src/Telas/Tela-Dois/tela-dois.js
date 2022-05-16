@@ -138,6 +138,7 @@ function Resultado (props) {
                 Mas não desanime!</p>
                 <p>{resultado.length}/{perguntas.length} CONCLUÍDOS</p>
             <div className="icones">{resultado.map(icone=> icone.item)}</div>
+            <button onClick={restart} className="restart"><p>REINICIAR QUIZZ</p></button>
             </>
         )
     }
