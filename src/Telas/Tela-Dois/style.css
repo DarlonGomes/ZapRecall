@@ -196,6 +196,23 @@ footer h4{
     margin: 15px 0 15px;
 }
 
+footer button{
+    width: 167px;
+    height: 32px;
+    background-color: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+footer button p{
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin: auto;
+}
+
 .respondido{
     text-decoration: line-through;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Botoes from "./botoes";
 import "./style.css"
-export default function TelaDois (){
+export default function TelaDois ({restart}){
     function comparador() { 
         return Math.random() - 0.5; 
     }
@@ -53,10 +53,10 @@ export default function TelaDois (){
         <main>
             {perguntas.map((item, index)=> <Cartas key={index} index={index + 1}  pergunta={item.pergunta} resposta={item.resposta} 
             resultado={resultado} setResultado={setResultado} erro={erro} setErro={setErro}/>)}
-            <div class="espaçador"></div>
+            <div className="espaçador"></div>
         </main>
         <footer>
-            <Resultado resultado={resultado} perguntas={perguntas} erro={erro}/>
+            <Resultado resultado={resultado} perguntas={perguntas} erro={erro} restart={restart}/>
         </footer>
         </>
     )
@@ -118,8 +118,8 @@ function Cartas (props){
 }   
 
 function Resultado (props) {
-    const {resultado, perguntas, erro} = props;
-
+    const {resultado, perguntas, erro, restart} = props;
+    
     if(resultado.length !== 0 && resultado.length < 8){
         return(
         <>
@@ -150,6 +150,7 @@ function Resultado (props) {
                 nenhum flashcard!</p>
                 <p>{resultado.length}/{perguntas.length} CONCLUÍDOS</p>
             <div className="icones">{resultado.map(icone=> icone.item)}</div>
+            <button onClick={restart} className="restart"><p>REINICIAR QUIZZ</p></button>
             </>
         )
     }

@@ -25,7 +25,7 @@ export default function Botoes ({flashBotao, flashResposta, flashClick}){
     if(flashBotao === `opcoes`){
         return(
             <>
-            <div class="secao-botoes">
+            <div className="secao-botoes">
             <button onClick={() => flashClick("errado")} className="backErrado"><p>Não lembrei</p> </button>
             <button onClick={() => flashClick("quase")} className="backQuase"><p> Quase não lembrei</p> </button>
             <button onClick={() => flashClick("certo")} className="backZap"><p>Zap!</p> </button>

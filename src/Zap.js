@@ -14,7 +14,11 @@ function TelaVisivel (){
     function comecaJogo (){
         setMudaPagina(!mudaPagina)
     }
+    function restart(){
+        setMudaPagina(false);
+        console.log("Abacate")
+    }
     return(
-            <TelaAtual mudaPagina ={mudaPagina} setMudaPagina = {setMudaPagina} comecaJogo = {comecaJogo} />
+            <TelaAtual mudaPagina ={mudaPagina}  comecaJogo = {comecaJogo} restart={restart}/>
     )
 }

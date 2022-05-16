@@ -1,9 +1,9 @@
 import TelaUm from "./Telas/Tela-Um/tela-um";
 import TelaDois from "./Telas/Tela-Dois/tela-dois";
-export default function TelaAtual ({mudaPagina, setMudaPagina, comecaJogo}){
+export default function TelaAtual ({mudaPagina, comecaJogo, restart}){
     if(mudaPagina === true){
         return (
-            <TelaDois setMudaPagina={setMudaPagina}/>
+            <TelaDois restart={restart}/>
         )
     }
     return(
