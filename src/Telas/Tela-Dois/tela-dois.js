@@ -1,46 +1,47 @@
 import React from "react";
 import Botoes from "./botoes";
 import "./style.css"
-export default function TelaDois ({restart}){
-    function comparador() { 
-        return Math.random() - 0.5; 
-    }
-    
-    const perguntas = [
-        {topico: "Pergunta",
-         pergunta: "Q: O que é JSX?",
-         resposta: "R: Uma extensão da linguagem do JavaScript"
-        },
-        {topico: "Pergunta",
-        pergunta: "Q: O React é ___",
-        resposta: "R: uma biblioteca para construção de interfaces"
+
+const perguntas = [
+    {topico: "Pergunta",
+     pergunta: "Q: O que é JSX?",
+     resposta: "R: Uma extensão da linguagem do JavaScript"
     },
-        {topico: "Pergunta",
-         pergunta: "Q: Componentes devem iniciar com __ ",
-         resposta: "R: letra maiúscula"
-        },
-        {topico: "Pergunta",
-         pergunta: "4. Q: Podemos colocar __ dentro do JSX ",
-         resposta: "R: expressões"
-        },
-        {topico: "Pergunta",
-         pergunta: "Q: O ReactDOM nos ajuda __ ",
-         resposta: "R: interagindo com a DOM para colocar componentes React na mesma"
-        },
-        {topico: "Pergunta",
-         pergunta: "Q: Usamos o npm para __",
-         resposta: "R: gerenciar os pacotes necessários e suas dependências"
-        },
-        {topico: "Pergunta",
-         pergunta: "Q: Usamos props para __ ",
-         resposta: "R: passar diferentes informações para componentes "
-        },
-        {topico: "Pergunta",
-         pergunta: "Q: Usamos estado (state) para __ ",
-         resposta: "R: dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
-        },
+    {topico: "Pergunta",
+    pergunta: "Q: O React é ___",
+    resposta: "R: uma biblioteca para construção de interfaces"
+},
+    {topico: "Pergunta",
+     pergunta: "Q: Componentes devem iniciar com __ ",
+     resposta: "R: letra maiúscula"
+    },
+    {topico: "Pergunta",
+     pergunta: "Q: Podemos colocar __ dentro do JSX ",
+     resposta: "R: expressões"
+    },
+    {topico: "Pergunta",
+     pergunta: "Q: O ReactDOM nos ajuda __ ",
+     resposta: "R: interagindo com a DOM para colocar componentes React na mesma"
+    },
+    {topico: "Pergunta",
+     pergunta: "Q: Usamos o npm para __",
+     resposta: "R: gerenciar os pacotes necessários e suas dependências"
+    },
+    {topico: "Pergunta",
+     pergunta: "Q: Usamos props para __ ",
+     resposta: "R: passar diferentes informações para componentes "
+    },
+    {topico: "Pergunta",
+     pergunta: "Q: Usamos estado (state) para __ ",
+     resposta: "R: dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
+    },
     ]
-    perguntas.sort(comparador);
+
+export default function TelaDois ({restart}){
+    function comparador(){
+        return perguntas.sort(()=> Math.random() - 0.5)
+    }
+    const [quizz, setQuizz] = React.useState(comparador);
     const [resultado,setResultado] = React.useState([]);
     const [erro, setErro] = React.useState(0);
 
@@ -51,12 +52,12 @@ export default function TelaDois ({restart}){
             <h1>ZapRecall</h1>
         </header>
         <main>
-            {perguntas.map((item, index)=> <Cartas key={index} index={index + 1}  pergunta={item.pergunta} resposta={item.resposta} 
+            {quizz.map((item, index)=> <Cartas key={index} index={index + 1}  pergunta={item.pergunta} resposta={item.resposta} 
             resultado={resultado} setResultado={setResultado} erro={erro} setErro={setErro}/>)}
             <div className="espaçador"></div>
         </main>
         <footer>
-            <Resultado resultado={resultado} perguntas={perguntas} erro={erro} restart={restart}/>
+            <Resultado resultado={resultado} perguntas={quizz} erro={erro} restart={restart}/>
         </footer>
         </>
     )
