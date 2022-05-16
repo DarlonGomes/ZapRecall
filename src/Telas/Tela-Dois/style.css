@@ -83,7 +83,7 @@ main .questao h4{
     word-wrap: break-word;
 }
 
-main .questao .secao-inferior{
+main .questao .secao-pergunta{
     width: 270px;
     display: flex;
     justify-content: flex-end;
@@ -98,7 +98,39 @@ main .questao img :hover{
     cursor: pointer;
     opacity: 0.7;
 }
+/* parte dois*/
 
+main .questao .secao-botoes{
+    height: auto;
+    display: flex;
+    justify-content: space-between
+}
+
+main .questao button {
+    width: 85px;
+    height: 37px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    border: none;
+}
+
+main .questao .backErrado{
+    background-color: #FF3030;
+
+}
+main .questao .backQuase{
+    background-color: #FF922E;
+
+}
+main .questao .backZap{
+    background-color: #2FBE34;
+}
+
+main .questao .secao-botoes .p{
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 14px;
+}
 footer{
     width: 375px;
     height: 70px;
