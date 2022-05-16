@@ -140,7 +140,7 @@ main .questao .secao-botoes .p{
     font-size: 14px;
 }
 footer{
-    width: 375px;
+    width: 100%;
     min-height: 70px;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
@@ -150,6 +150,7 @@ footer{
     justify-content: center;
     position: fixed;
     bottom: 0;
+    right: 0;
     margin-top: 15px;
 }
 
@@ -209,3 +210,64 @@ footer h4{
 
 }
 
+@media (min-width: 600px){
+    header{
+        width: auto;
+        height: 100px;
+    }
+
+    header h1{
+        font-size: 55px;
+    }
+
+    header img{
+        width: 86px;
+        height: 100px;
+        margin-right: 10px;
+    }
+    main{
+        width: 568px;
+        overflow: hidden;
+    }
+
+    main .topico{
+        width: 567px;
+        height: 91px;
+    }
+
+    main .topico h4{
+        font-size: 24px;
+    }
+
+    main .topico ion-icon{
+        font-size: 36px;
+    }
+
+    main .questao{
+        width: 567px;
+        height: 230px;
+    }
+
+    main .questao h4{
+        font-size: 24px;
+    }
+
+    main .questao .secao-pergunta{
+        width: 530px;
+    }
+
+    main .questao .secao-botoes{
+        width: 530px;
+        justify-content: center;
+    }
+
+    main .questao button{
+        height: 60px;
+        width: 100px;
+        margin: 0 20px;
+    }
+
+    main .questao button p{
+        font-size: 16px;
+    }
+}
